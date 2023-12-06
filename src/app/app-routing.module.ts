@@ -8,7 +8,7 @@ import { ServicesComponent } from 'src/components/services/services.component';
 import { ContactComponent } from 'src/components/contact/contact.component';
 import { FooterComponent } from 'src/components/footer/footer.component';
 import { NavbarComponent } from 'src/components/navbar/navbar.component';
-
+import { LoginComponent } from 'src/components/login/login.component';
 
 
 const routes: Routes = [
@@ -22,8 +22,8 @@ const routes: Routes = [
   {path:'footer',component:FooterComponent},
   {path:'navbar',component:NavbarComponent},
  {path:'admin',loadChildren:()=>import('./admin/admin.module').then((m)=>m.AdminModule)}
-
-  
+,
+ {path:'login',component:LoginComponent} 
 ];
 
 @NgModule({

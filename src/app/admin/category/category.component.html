@@ -1,0 +1,104 @@
+<app-toasts style=" z-index: 1200" aria-live="polite" aria-atomic="true"></app-toasts>
+<section>
+  <div class="container">
+    <div class="row">
+      <button class="btn btn-lg btn-outline-primary mb-2 me-2 w-25" (click)="openEnd(content)">Add New Category</button>
+    </div>
+    <div class="row">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Category Info</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cat of categories;let index=index">
+            <td scope="row">{{index+1}}</td>
+            <td>
+              <div *ngIf="matchId(cat.id)">
+                <input type="text" class="form-control" [(ngModel)]="editObj.name">
+            </div>
+            <div  *ngIf="! matchId(cat.id)">
+                {{cat.name}}
+            </div>
+            </td>
+
+
+
+
+            <td>
+              <div *ngIf="matchId(cat.id)">
+                <input type="text" class="form-control" [(ngModel)]="editObj.catInfo">
+            </div>
+            <div  *ngIf="!matchId(cat.id)">
+                {{cat.catInfo}}
+            </div>
+            </td>
+            <td>
+              <div *ngIf="!matchId(cat.id)" class="d-flex">
+
+                <button (click)="onEdit(cat)" class="btn btn-primary m-1"> Edit</button>
+
+                <button (click)=" openSm(content1,cat.id)" class="btn btn-danger m-1"> Delete</button>
+            </div>
+            <div *ngIf="matchId(cat.id)" class="d-flex">
+
+                <button (click)="onUpdate()" class="btn btn-info m-1"> Update</button>
+
+                <button (click)="onCancel(cat)" class="btn btn-primary m-1">Cancle</button>
+            </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title">Add Category</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+  </div>
+  <div class="offcanvas-body h-100">
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Category Name</label>
+        <input type="text" id="name" formControlName="name" class="form-control" placeholder="Enter category name">
+        <div *ngIf="categoryForm.get('name')?.hasError('required') && categoryForm.get('name')?.touched" class="text-danger">
+          Category name is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="catInfo" class="form-label">Category Info</label>
+        <textarea id="catInfo" formControlName="catInfo" class="form-control" placeholder="Enter category information"></textarea>
+        <div *ngIf="categoryForm.get('catInfo')?.hasError('required') && categoryForm.get('catInfo')?.touched" class="text-danger">
+          Category info is required.
+        </div>
+      </div>
+      <button type="submit" [disabled]="categoryForm.invalid" class="btn btn-primary btn-lg float-end mb-3">Add Category</button>
+    </form>
+
+  </div>
+
+</ng-template>
+
+
+
+<ng-template #content1 let-modal>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p class="mb-3">This Action Will Delete catergory</p>
+    <p>Are you sure?</p>
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-outline-danger m-1" (click)="modal.close('Close click')">No</button>
+      <button class="btn btn-primary m-1"(click)="onDelete()" >Yes</button>
+    </div>
+  </div>
+</ng-template>
+

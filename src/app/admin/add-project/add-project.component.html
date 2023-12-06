@@ -1,0 +1,55 @@
+<app-toasts></app-toasts>
+<section class="card pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <!-- <div class="btn" routerLink="/all-projects">Back</div> -->
+      </div>
+    </div>
+
+    <div class="col-md-6 mx-auto"> <!-- Adjust the width by changing the 'col-md-6' class -->
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="p-4 bg-light rounded">
+        <div class="mb-3">
+          <label for="name" class="form-label">Project Name:</label>
+          <input type="text" id="name" formControlName="name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description:</label>
+          <textarea id="description" formControlName="description" class="form-control"></textarea>
+        </div>
+<!--
+        <div class="mb-3">
+          <label for="price" class="form-label">Price:</label>
+          <input type="number" id="price" formControlName="price" step="0.01" class="form-control" required>
+        </div> -->
+
+        <!-- <div class="mb-3">
+          <label for="minOrderQuantity" class="form-label">Min Order Quantity:</label>
+          <input type="number" id="minOrderQuantity" formControlName="minOrderQuantity" class="form-control" required>
+        </div> -->
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Category:</label>
+          <select id="category" formControlName="category" class="form-select" required>
+            <option value="" disabled>Select a category</option>
+            <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Images:</label>
+          <div @fadeInOut formArrayName="images">
+            <input type="file" multiple (change)="onFileChange($event)" class="form-control-file">
+            <div *ngFor="let imgCtrl of images; let i = index">
+              {{ imgCtrl.name }}
+              <!-- <button type="button" (click)="removeImage(i)">Remove</button> -->
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Product</button>
+      </form>
+    </div>
+  </div>
+</section>

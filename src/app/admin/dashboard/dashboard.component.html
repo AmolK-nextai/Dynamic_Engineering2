@@ -1,1 +1,74 @@
-<p>dashboard works!</p>
+<div class="grid-container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="menu-icon " (click)="openSidebar()">
+      <span class="btn btn-primary">menu</span>
+    </div>
+    <div class="header-left">
+
+    </div>
+    <div class="header-right">
+      <!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Action
+  </button>
+  <ul class="dropdown-menu">
+    <!-- <li><a class="dropdown-item">Action</a></li> -->
+    <li><a class="dropdown-item" (click)="logOut()" >Logout</a></li>
+
+  </ul>
+</div>
+
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <!-- Sidebar -->
+  <aside id="sidebar" [ngClass]="{'sidebar-responsive': sidebarOpen}" id="sidebar">
+    <div class="sidebar-title">
+      <div class="sidebar-brand">
+        <!-- <span class="material-icons-outlined">shopping_cart</span> STORE -->
+      </div>
+      <span class="btn btn-primary" (click)="closeSidebar()">close</span>
+    </div>
+
+    <ul class="sidebar-list">
+      <li class="sidebar-list-item" routerLink="./all-projects" routerLinkActive="active">
+        <a >
+         Dashboard
+        </a>
+      </li>
+      <li class="sidebar-list-item"    routerLink="./add-project" routerLinkActive="active" >
+        <a >
+         Add Project
+        </a>
+      </li>
+      <li class="sidebar-list-item" routerLink="./category" routerLinkActive="active">
+        <a  >
+    Categories
+        </a>
+      </li>
+      <li class="sidebar-list-item"  routerLink="./user" routerLinkActive="active">
+        <a>
+          Users
+        </a>
+      </li>
+
+    </ul>
+  </aside>
+  <!-- End Sidebar -->
+
+  <!-- Main -->
+  <main class="main-container">
+    <div class="main-title">
+      <h2>DASHBOARD</h2>
+    </div>
+
+
+<router-outlet></router-outlet>
+  </main>
+  <!-- End Main -->
+
+</div>

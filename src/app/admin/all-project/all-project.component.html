@@ -1,0 +1,53 @@
+<!-- <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar> -->
+
+<section class="card">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col">
+        <button class="d-flex align-items-center p-3 btn btn-primary" [routerLink]="['../add-project']">
+        Add Product
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr class="bg-success text-white">
+              <th>Sr</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of products; let srNo = index">
+              <td>{{ srNo + 1 }}</td>
+              <td>{{ user.projectName }}</td>
+              <td>{{ user?.projectCategory?.name }}</td>
+              <td class="text-center">
+                <button class="btn btn-danger m-1" (click)="openSm(content, user.id)">Delete</button>
+                <button class="btn btn-primary m-1" [routerLink]="['../edit-project/', user.id]">Edit</button>
+                <!-- <button class="btn btn-info m-1" [routerLink]="['/product_details', user.id]">View</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p class="mb-3">This Action Will Delete Product</p>
+    <p>Are you sure?</p>
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-outline-danger m-1" (click)="modal.close('Close click')">No</button>
+      <button class="btn btn-primary m-1" (click)="deleteProduct(content)">Yes</button>
+    </div>
+  </div>
+</ng-template>

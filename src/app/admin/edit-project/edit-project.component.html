@@ -1,0 +1,88 @@
+<!-- <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar> -->
+<app-toasts></app-toasts> 
+<section class="edit-product-section">
+  <div class="container mt-4">
+    <h2>Edit Product</h2>
+    <form (ngSubmit)="onSave()" #editForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="product.projectName" required>
+      </div>
+
+
+      <div class="form-group">
+        <label  for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" [(ngModel)]="product.description" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" id="category" name="category" [(ngModel)]="product. projectCategoryId">
+          <option *ngFor="let category of categories" [value]="">{{ category.name }}</option>
+        </select>
+      </div>
+
+      <!-- Add more form fields as needed -->
+
+      <!-- Buttons -->
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" [routerLink]="['/admin/product-list']">Back</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Image section ... -->
+
+
+<section>
+  <div class="container">
+    <div class="row"><div class="text-center">
+      <h3 class="text-dark">Product Images</h3>
+    </div></div>
+    <div class="row p-3">
+      <input type="file" multiple (change)="onImgaeChainging($event  )" placeholder="Add New Images">
+      <div *ngFor="let imgCtrl of images; let i = index" class="text-dark">
+        {{imgCtrl.name}}
+        <img [src]="imgCtrl.url" alt="">
+
+        <!-- <button type="button" (click)="removeImage(i)">Remove</button> -->
+      </div>
+      <button *ngIf="images" class="btn btn-primary w-25 p-3" (click)=" addNewImgae()">Upload Image</button>
+    </div>
+    <div class="row">
+      <div *ngIf="product.projectImage.length<1">
+       <h2 class="text-dark"> NO Images is Avilable</h2>
+      </div>
+      <div class="col-3" *ngFor="let img of product.projectImage ; let i = index">
+        <div class="row">
+          <div class="row">
+            <img class="h-100" [src]="'http://localhost:3000/'+ img" alt="">
+          </div>
+          <div class="row">
+            <div class="btn" (click)="openSm(content, img)">
+              Delete
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p class="mb-3">This Action Will Delete Product</p>
+    <p>Are you sure?</p>
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-outline-danger m-1" (click)="modal.close('Close click')">No</button>
+      <button class="btn btn-primary m-1" (click)="deleteProductImg(content)">Yes</button>
+    </div>
+  </div>
+</ng-template>
+
