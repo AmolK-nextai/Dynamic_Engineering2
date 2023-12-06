@@ -1,0 +1,148 @@
+
+<br>
+<br>
+<div class="tt-breadcrumb" style="background-color:black; text-align: center;">
+        <div class="container container-lg-fluid  text-center">
+            <ul style="text-align: center;">
+                <li><a routerLink="/home">Home</a></li>
+                <li>Contacts</li>
+            </ul>
+            
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <main id="tt-pageContent">
+        <div class="map-contact" id="map-contact"></div>
+        <div class="section-indent-extra">
+            <div class="container container-lg-fluid">
+                <div class="section__wrapper02 tt-contact-wrapper">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="tt-contact">
+                                <div class="tt-icon"><i class="icon-map-marker"></i></div>
+                                <div class="tt-content">
+                                    <div class="tt-title">Address:</div>
+                                    <address>Electrician Company<br>8494 Signal Hill Road Manassas,<br>VA, 20110
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="tt-contact">
+                                <div class="tt-icon"><i class="icon-clock-circular-outline-1"></i></div>
+                                <div class="tt-content">
+                                    <div class="tt-title">Work Hours:</div>Mon-Fri 08:00 AM - 05:00 PM<br>Sat-Sun:
+                                    Emergency only
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="tt-contact">
+                                <div class="tt-icon"><i class="icon-telephone"></i></div>
+                                <div class="tt-content">
+                                    <div class="tt-title">Phone Numbers:</div>
+                                    <address><a href="tel:1(800)7654321">1 (800) 765-43-21 (Appointments)</a></address>
+                                    <address><a href="tel:1(800)7654322">1 (800) 765-43-22 (Office)</a></address>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-indent">
+            <div class="container container-md-fluid">
+                <div class="section-title max-width-01">
+                    <div class="section-title__01">Contact Form</div>
+                    <div class="section-title__02">Get In Touch with Us</div>
+                    <div class="section-title__03">Are you stumped by a home wiring project or problem? Fill out the
+                        form with the details of your situation and we can come to your aid.</div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form id="feedbackform" class="form-default" method="post" novalidate="novalidate" action="#">
+                            <div class="form-group"><input type="text" name="name" class="form-control"
+                                    placeholder="Your Name *"></div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"><input type="text" name="email" class="form-control"
+                                            placeholder="Your e-mail address *"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"><input type="text" name="phonenumber" class="form-control"
+                                            placeholder="Your phone number"></div>
+                                </div>
+                            </div>
+                            <div class="form-group"><textarea name="message" class="form-control" rows="4"
+                                    placeholder="Qustion In Detail *"></textarea></div>
+                            <div class="form-group">
+                                <div class="tt-notes text-center">All Electrical work must be done by a qualified
+                                    licensed electrician.</div>
+                            </div>
+                            <div class="form-group text-center"><button class="tt-btn btn__color01" type="submit"><span
+                                        class="icon-lightning"></span>Contact us</button></div>
+                            <div class="tt-modal-message">Form sent successfully</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script async src="assets/js/bundle.js"></script><!-- modal - Make an Appointment -->
+    <div class="modal fade" id="modalMakeAppointment" tabindex="-1" role="dialog" aria-label="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-body form-default modal-layout-dafault"><button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true"><span class="icon-860796"></span></button>
+                    <div class="modal-titleblock">
+                        <div class="modal-title">Make an Appointment</div>
+                    </div>
+                    <form class="form-modal" id="jsFormMakeAppointment" method="post" novalidate="novalidate"
+                        action="#">
+                        <div class="form-group"><input type="text" name="name" class="form-control" id="modalName01"
+                                placeholder="Your Name *"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group"><input type="text" name="email" class="form-control"
+                                        id="modalEmail01" placeholder="Your e-mail address *"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group"><input type="text" name="phone" class="form-control"
+                                        id="modalPhone01" placeholder="Your phone number"></div>
+                            </div>
+                        </div>
+                        <div class="form-group"><input type="text" name="modalAddress" class="form-control"
+                                id="modalAddress" placeholder="Address *"></div>
+                        <div class="form-group">
+                            <div class="custom-select"><select name="typeofservice" class="tt-select">
+                                    <option value="Service">Service</option>
+                                    <option value="Service 02">Service 02</option>
+                                    <option value="Service 03">Service 03</option>
+                                    <option value="Service 04">Service 04</option>
+                                    <option value="Service 05">Service 05</option>
+                                </select></div>
+                        </div>
+                        <div class="form-group"><input name="date" placeholder="Date of visit" autocomplete="off"
+                                data-timepicker="true" class="js_datepicker-1 form-control" type="text">
+                            <div class="form-group__icon icon-747993"></div>
+                        </div>
+                        <div class="form-group"><textarea name="message" class="form-control"
+                                placeholder="Your comment"></textarea></div><button type="submit"
+                            class="tt-btn btn__color01"><span class="icon-lightning"></span>Explore services</button>
+                        <div class="tt-modal-message">Form sent successfully</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><a href="#" id="js-backtotop" class="tt-back-to-top"><i class="icon-lightning"></i></a>
+    <script>var giftofspeed = document.createElement('link');
+        giftofspeed.rel = 'stylesheet';
+        giftofspeed.href = 'assets/css/styles__loaded_later.css';
+        giftofspeed.type = 'text/css';
+        var godefer = document.getElementsByTagName('link')[0];
+        godefer.parentNode.insertBefore(giftofspeed, godefer);</script>
