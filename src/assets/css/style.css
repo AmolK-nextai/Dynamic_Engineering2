@@ -2576,7 +2576,7 @@ html.ie:not(.edge) .checkbox-group label .check {
 
 .holder-top-desktop {
     background-color: var(--default_color02);
-    height: 52px
+    height: 40px
 }
 
 .holder-top-desktop .tt-obj {
