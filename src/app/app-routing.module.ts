@@ -9,6 +9,7 @@ import { ContactComponent } from 'src/components/contact/contact.component';
 import { FooterComponent } from 'src/components/footer/footer.component';
 import { NavbarComponent } from 'src/components/navbar/navbar.component';
 import { LoginComponent } from 'src/components/login/login.component';
+import { authGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'footer',component:FooterComponent},
   {path:'navbar',component:NavbarComponent},
- {path:'admin',loadChildren:()=>import('./admin/admin.module').then((m)=>m.AdminModule)}
+ {path:'admin',loadChildren:()=>import('./admin/admin.module').then((m)=>m.AdminModule), canActivate: [authGuard]}
 ,
  {path:'login',component:LoginComponent} 
 ];

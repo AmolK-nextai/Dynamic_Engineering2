@@ -1,0 +1,62 @@
+<app-toasts style=" z-index: 1200" aria-live="polite" aria-atomic="true"></app-toasts>
+<button class="btn btn-lg btn-outline-primary mb-2 me-2 w-25" (click)="openEnd(content)">Add New User</button>
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header">
+    <h4 class="offcanvas-title">Add Useer</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+  </div>
+  <div class="offcanvas-body h-100">
+    <form [formGroup]=" resgistrationForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Username</label>
+        <input type="text" id="name" formControlName="username" class="form-control" placeholder="Enter Username">
+        <div *ngIf=" resgistrationForm.get('username')?.hasError('required') &&  resgistrationForm.get('username')?.touched" class="text-danger">
+          Username is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="catInfo" class="form-label">Password</label>
+        <textarea id="catInfo" formControlName="password" class="form-control" placeholder="Enter Password"></textarea>
+        <div *ngIf=" resgistrationForm.get('password')?.hasError('required') &&  resgistrationForm.get('password')?.touched" class="text-danger">
+          Password  is required.
+        </div>
+      </div>
+      <button type="submit" [disabled]=" resgistrationForm.invalid" class="btn btn-primary btn-lg float-end mb-3">Add User</button>
+    </form>
+
+  </div>
+
+</ng-template>
+
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr class="bg-success text-white">
+              <th>Sr</th>
+              <th>Name</th>
+              <!-- <th>Category</th>
+              <th>Action</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of loggedUser; let srNo = index">
+              <td>{{ srNo + 1 }}</td>
+              <td class="text-dark">{{ user?.username }}</td>
+              <!-- <td>{{ user? }}</td> -->
+              <td class="text-center">
+                <button class="btn btn-danger m-1" (click)=" deleteUser(user.id)">Delete</button>
+                <!-- <button class="btn btn-primary m-1" [routerLink]="['../edit-project/', user.id]">Edit</button>
+                <button class="btn btn-info m-1" [routerLink]="['/product_details', user.id]">View</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
