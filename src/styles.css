@@ -1144,7 +1144,7 @@ fieldset:disabled a.btn {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0
 }
-
+/*
 .modal-open {
     overflow: hidden
 }
@@ -1272,6 +1272,9 @@ fieldset:disabled a.btn {
     height: 50px;
     overflow: scroll
 }
+
+
+*/
 
 .align-baseline {
     vertical-align: baseline !important
