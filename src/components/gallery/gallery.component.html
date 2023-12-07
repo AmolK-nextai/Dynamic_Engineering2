@@ -53,78 +53,13 @@
             id="filter-layout"
             class="row justify-content-center tt-gallery-wrapper js-wrapper-gallery"
           >
-            <div class="col-6 col-md-4 show filter-all filter-electrica">
-              <a href="assets/images/gallery-img01.jpg" class="tt-gallery"
+            <div class="col-6 col-md-4 show filter-all filter-electrica" *ngFor=" let product of productToreder">
+              <a ng-href="http://localhost:3000/+product.projectImage" class="tt-gallery"
                 ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img01.jpg" alt=""
+                <img [src]="'http://localhost:3000/'+product.projectImage" alt=""
               /></a>
             </div>
-            <div class="col-6 col-md-4 show filter-all filter-electrica">
-              <a href="assets/images/gallery-img02.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img02.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-heating">
-              <a href="assets/images/gallery-img03.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img03.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-heating">
-              <a href="assets/images/gallery-img04.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img04.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-conditioning">
-              <a href="assets/images/gallery-img05.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img05.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-conditioning">
-              <a href="assets/images/gallery-img06.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img06.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-security">
-              <a href="assets/images/gallery-img07.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img07.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-security">
-              <a href="assets/images/gallery-img08.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img08.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-other">
-              <a href="assets/images/gallery-img09.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img09.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-other">
-              <a href="assets/images/gallery-img10.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img10.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-heating">
-              <a href="assets/images/gallery-img11.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img11.jpg" alt=""
-              /></a>
-            </div>
-            <div class="col-6 col-md-4 show filter-all filter-electrical">
-              <a href="assets/images/gallery-img12.jpg" class="tt-gallery"
-                ><div class="gallery__icon"></div>
-                <img src="assets/images/gallery-img12.jpg" alt=""
-              /></a>
-            </div>
+            
             <div
               class="col-12 text-center tt-top-more"
               id="js-more-include"
@@ -259,11 +194,4 @@
     <a href="#" id="js-backtotop" class="tt-back-to-top"
       ><i class="icon-lightning"></i
     ></a>
-    <script>
-      var giftofspeed = document.createElement("link");
-      giftofspeed.rel = "stylesheet";
-      giftofspeed.href = "assets/css/styles__loaded_later.css";
-      giftofspeed.type = "text/css";
-      var godefer = document.getElementsByTagName("link")[0];
-      godefer.parentNode.insertBefore(giftofspeed, godefer);
-    </script>
+  
