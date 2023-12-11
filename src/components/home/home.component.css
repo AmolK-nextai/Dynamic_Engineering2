@@ -1,0 +1,34 @@
+/* .carousel-caption {
+    position: absolute;
+  margin: 0;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  }
+
+  .carousel-inner {
+    height: 100%;
+  } */
+
+  .carousel-caption {
+    position: absolute;
+    margin: 0;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .carousel-caption h5 {
+    margin-bottom: 10px; /* Adjust the space between h5 and p */
+  }
+  
+  .carousel-caption p {
+    margin-top: 125px; /* Add margin-top to separate p from h5 */
+  }
+  
+  .carousel-inner {
+    height: 100%;
+  }
+  

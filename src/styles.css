@@ -6,7 +6,7 @@
     --default_font_icon: 'electrician';
     --default_bg_color: #ffffff;
     --default_text_color: #7b7b7b;
-    --default_color: #f47629;
+    --default_color: #db241c;
     --default_color02: #303442;
     --default_color03: #a0a0a0;
     --link_color_base: var(--default_color);
@@ -2639,7 +2639,7 @@ html.ie:not(.edge) .checkbox-group label .check {
 }
 
 .h-info02 .tt-item a {
-    color: var(--default_color)
+    color: #ffffff
 }
 
 .h-info02 .tt-item a:hover {
@@ -9156,4 +9156,11 @@ form {
 }
 
 
-   
+.carousel-item h5 {
+    position: absolute;
+    margin: 0;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }

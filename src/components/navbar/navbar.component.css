@@ -1,0 +1,23 @@
+.nav-item{
+    padding-right: 30px;
+    font-weight: 700;
+  
+}
+.logo-img{
+    display: inline;
+    width: 80%;
+    padding-right: 20px;
+    
+}
+
+.navbar-nav li.nav-item:hover  .text {
+    color: #db241c; /* Change this to your desired hover color */
+  }
+
+  
+  
+  .navbar-nav .dropdown-menu .dropdown-item:hover {
+    background-color: #f0f0f0; /* Change this to your desired hover background color */
+    color: red; /* Change this to your desired hover text color */
+    font-weight: 700;
+  }
