@@ -5,10 +5,31 @@
 }
 .logo-img{
     display: inline;
-    width: 80%;
-    padding-right: 20px;
+    width: 70%;
+    /* padding-right: 20px; */
     
 }
+@media only screen and (max-width: 600px) {
+  .inline{
+    display: inline;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .inline{
+    display: inline;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #js-toggle-h-holder{
+    display: none;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #js-toggle-h-holder{
+    display: none;
+  }
+}
+
 
 .navbar-nav li.nav-item:hover  .text {
     color: #db241c; /* Change this to your desired hover color */
