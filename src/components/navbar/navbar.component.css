@@ -1,13 +1,17 @@
+.active {
+  color: #007bff; /* Set your desired styles for the active link */
+  font-weight: bold;
+}
 .nav-item{
     padding-right: 30px;
     font-weight: 700;
-  
+
 }
 .logo-img{
     display: inline;
     width: 70%;
     /* padding-right: 20px; */
-    
+
 }
 @media only screen and (max-width: 600px) {
   .inline{
@@ -35,8 +39,8 @@
     color: #db241c; /* Change this to your desired hover color */
   }
 
-  
-  
+
+
   .navbar-nav .dropdown-menu .dropdown-item:hover {
     background-color: #f0f0f0; /* Change this to your desired hover background color */
     color: red; /* Change this to your desired hover text color */

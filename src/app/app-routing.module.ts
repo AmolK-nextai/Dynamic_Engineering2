@@ -24,11 +24,17 @@ const routes: Routes = [
   {path:'navbar',component:NavbarComponent},
  {path:'admin',loadChildren:()=>import('./admin/admin.module').then((m)=>m.AdminModule), canActivate: [authGuard]}
 ,
- {path:'login',component:LoginComponent} 
+ {path:'login',component:LoginComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'top',
+    anchorScrolling: 'enabled',
+    initialNavigation: 'enabledBlocking',
+    useHash: true
+    // relativeLinkResolution: 'legacy'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

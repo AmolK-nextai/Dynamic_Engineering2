@@ -18,7 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from 'src/components/login/login.component';
 import {ToastsComponent} from '../app/admin/toasts/toasts.component'
 import { FormsModule }   from '@angular/forms';
-
+import { LightboxModule } from 'ngx-lightbox'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,8 +32,8 @@ import { FormsModule }   from '@angular/forms';
     FooterComponent,
     NavbarComponent,
     LoginComponent,
-   
-  
+
+
   ],
   imports: [
     BrowserModule,
@@ -41,7 +41,8 @@ import { FormsModule }   from '@angular/forms';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    LightboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
