@@ -10,6 +10,15 @@
   .carousel-inner {
     height: 100%;
   } */
+.carousel-item {
+  height: 100vh; /* Set height for each carousel item */
+}
+
+.carousel-item img {
+  /* Adjust styles for images within carousel items */
+  width: 100%;
+  height: 100%;
+}
 
   .carousel-caption {
     position: absolute;
@@ -22,15 +31,15 @@
   .carousel-inner {
     height: 100%;
   }
-  
-  
+
+
   .carousel-caption h5 {
     margin-bottom: 10px; /* Adjust the space between h5 and p */
   }
   .carousel-caption p {
     margin-bottom: 20px; /* Adjust the space between h5 and p */
   }
-  
+
   .carousel-indicators button {
     width: 10px;
     height: 10px;
@@ -39,8 +48,7 @@
 .carousel-indicators .active {
   background-color: #db241c;
 }
- 
-  
-  
-  
-  
+
+
+
+
