@@ -436,74 +436,11 @@
         </ul>
       </div> -->
       <div id="filter-layout" class="row justify-content-center gallery-innerlayout-wrapper js-wrapper-gallery">
-        <div class="col-4 col-md-3 col-custom-item5 residences show all">
-          <a href="assets/images/gallery01-01.jpg" class="tt-gallery">
+        <div class="col-4 col-md-3 col-custom-item5 residences show all" *ngFor=" let product of productToreder;let i=index">
+          <a (click)="open(i)" class="tt-gallery">
             <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-01.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 residences show all">
-          <a href="assets/images/gallery01-02.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-02.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 residences show all">
-          <a href="assets/images/gallery01-03.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-03.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 industrial_objects show all">
-          <a href="assets/images/gallery01-04.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-04.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 offices show all">
-          <a href="assets/images/gallery01-05.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-05.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 industrial_objects show all">
-          <a href="assets/images/gallery01-06.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-06.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 retail_objects show all">
-          <a href="assets/images/gallery01-07.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-07.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 offices show all">
-          <a href="assets/images/gallery01-08.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-08.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 retail_objects show all">
-          <a href="assets/images/gallery01-09.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-09.jpg" alt="" />
-          </a>
-        </div>
-        <div class="col-4 col-md-3 col-custom-item5 retail_objects show all">
-          <a href="assets/images/gallery01-10.jpg" class="tt-gallery">
-            <div class="gallery__icon"></div>
-            <img class="lazyload" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs="
-              data-src="assets/images/gallery01-10.jpg" alt="" />
+            <img [src]="'http://localhost:3000/'+product.projectImage"  alt=""
+            />
           </a>
         </div>
         <div class="col-12 text-center tt-top-more" id="js-more-include"
